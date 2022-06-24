@@ -74,12 +74,16 @@ app.post("/", function(req, res){
 
 
 
-let port = process.env.PORT;
-if (port == null || port == "" ){
-  port = 3000;
-}
+// let port = process.env.PORT;
+// if (port == null || port == "" ){
+//   port = 3000;
+// }
+//
+// app.listen(port, function(req, res){
+//   console.log("server has started Succeessfully");
+//
+// });
 
-app.listen(port, function(req, res){
-  console.log("server has started Succeessfully");
 
-});
+
+app.listen(process.env.PORT || port, {} => console.log('Example app listening at http://localhost:${port}'));
