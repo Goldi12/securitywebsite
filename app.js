@@ -4,7 +4,6 @@ const bodyParser = require("body-Parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const encrypt = require("mongoose-encryption")
-const port = 3000;
 
 const app = express();
 
@@ -74,16 +73,12 @@ app.post("/", function(req, res){
 
 
 
-// let port = process.env.PORT;
-// if (port == null || port == "" ){
-//   port = 3000;
-// }
-//
-// app.listen(port, function(req, res){
-//   console.log("server has started Succeessfully");
-//
-// });
+let port = process.env.PORT;
+if (port == null || port == "" ){
+  port = 3000;
+}
 
+app.listen(port, function(req, res){
+  console.log("server has started Succeessfully");
 
-
-app.listen(process.env.PORT || port, {} => console.log('Example app listening at http://localhost:${port}'));
+});
