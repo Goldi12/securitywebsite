@@ -73,12 +73,7 @@ app.post("/", function(req, res){
 
 
 
-let port = process.env.PORT;
-if (port == null || port == "" ){
-  port = 3000;
-}
-
-app.listen(port, function(req, res){
-  console.log("server has started Succeessfully");
+app.listen(process.env.PORT || 3000, function(req, res){
+  console.log("server is running at port 3000;");
 
 });
